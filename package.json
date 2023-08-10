@@ -1,0 +1,56 @@
+{
+  "name": "figma-assets-exporter",
+  "description": "Create figma assets like icons, svg, images just by providing a fileId and the node where your components live.",
+  "version": "1.2.2.RC1",
+  "main": "build/index.js",
+  "author": "Nathanael Sommer / nathanael@sommerkoch.ch",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "dotenv": "^16.3.1",
+    "figma-js": "^1.5.1",
+    "fs": "^0.0.1-security",
+    "listr2": "^6.6.1",
+    "node-fetch": "^3.3.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "bin": {
+    "figma-assets-exporter": "build/bin/index.js"
+  },
+  "scripts": {
+    "dev": "watch 'npm run build' src",
+    "build": "babel src -d build",
+    "prepare": "npm run build",
+    "release": "np"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "np": "^8.0.4",
+    "watch": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nate-summercook/figma-assets-exporter.git"
+  },
+  "keywords": [
+    "figma",
+    "svg",
+    "icon",
+    "asset"
+  ],
+  "bugs": {
+    "url": "https://github.com/nate-summercook/figma-assets-exporter/issues"
+  },
+  "homepage": "https://github.com/nate-summercook/figma-assets-exporter#readme"
+}
