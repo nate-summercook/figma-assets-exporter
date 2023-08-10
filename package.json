@@ -1,7 +1,8 @@
 {
   "name": "figma-assets-exporter",
   "description": "Create figma assets like icons, svg, images just by providing a fileId and the node where your components live.",
-  "version": "1.2.2.RC1",
+  "version": "1.2.2",
+  "type": "module",
   "main": "build/index.js",
   "author": "Nathanael Sommer / nathanael@sommerkoch.ch",
   "license": "MIT",
@@ -12,11 +13,6 @@
     "fs": "^0.0.1-security",
     "listr2": "^6.6.1",
     "node-fetch": "^3.3.2"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
   },
   "bin": {
     "figma-assets-exporter": "build/bin/index.js"

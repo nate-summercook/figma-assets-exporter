@@ -1,8 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 
-require('@babel/polyfill');
-
 const mkDirByPathSync = (targetDir, { isRelativeToScript = false } = {}) => {
   const { sep } = path;
   const initDir = path.isAbsolute(targetDir) ? sep : '';

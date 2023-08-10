@@ -2,6 +2,6 @@
 
 ("use strict");
 
-import { getFigmaAssets } from "../";
+import { getFigmaAssets } from "../index.js";
 
 getFigmaAssets();

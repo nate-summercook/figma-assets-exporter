@@ -2,11 +2,11 @@ import fs from 'fs';
 import * as Figma from 'figma-js';
 import { Listr } from 'listr2';
 
-import { saveImageToFs } from './helpers/saveImageToFs';
-import { mkDirByPathSync } from './helpers/mkDirByPathSync';
+import { saveImageToFs } from './helpers/saveImageToFs.js';
+import { mkDirByPathSync } from './helpers/mkDirByPathSync.js';
 
-require('@babel/polyfill');
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 const CONFIG_FILENAME = 'figma-assets-exporter.json';
 
@@ -103,7 +103,7 @@ const getFigmaAssets = async options => {
         task.title = `Success! Saved images to '${output}'`;
         return itemsWithUrls;
       } catch (e) {
-        throw new Error('Error saving images to filesystem');
+        throw new Error('Error saving images to filesystem: ' + e.message);
       }
     };
 

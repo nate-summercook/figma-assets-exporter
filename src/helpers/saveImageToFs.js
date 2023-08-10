@@ -1,8 +1,6 @@
 import fetch from 'node-fetch';
 import fs from 'fs';
 
-require('@babel/polyfill');
-
 const saveImageToFs = async (url, imageName, fileExtension, output, createSubdirectories) => {
   try {
     const imageNameArray = imageName.split('/');
@@ -16,7 +14,9 @@ const saveImageToFs = async (url, imageName, fileExtension, output, createSubdir
       fs.mkdirSync(`${output}/${subfolder}`, { recursive: true });
     }
     const content = await response.blob();
-    fs.writeFileSync(`${output}/${fileName}`, content);
+    const arrayBuffer = await content.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    fs.writeFileSync(`${output}/${fileName}`, buffer);
   } catch (e) {
     throw e;
   }
